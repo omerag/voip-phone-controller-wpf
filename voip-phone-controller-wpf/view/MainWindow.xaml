@@ -1,0 +1,38 @@
+﻿<Window x:Class="voip_phone_controller_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:voip_phone_controller_wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="640" Width="840">
+
+    
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <TextBox DockPanel.Dock="Left" Text="hellloooo" TextAlignment="Center" Margin="20,10" Height="22" MinWidth="100" VerticalContentAlignment="Center"/>
+            <Button DockPanel.Dock="Right" Width="50" Height="50" Content="CALL" HorizontalAlignment="Right" Margin="20,10" IsDefault="True"/>
+            <Button DockPanel.Dock="Right" Width="50" Height="50" Content="HANG" HorizontalAlignment="Right" Margin="20,10" IsCancel="True"/>
+
+
+        </DockPanel>
+        
+        <TabControl DockPanel.Dock="Left" TabStripPlacement="Left" >
+            <TabItem Header="NOC">
+                <Label Content="Text goes here!"/>
+            </TabItem>
+            <TabItem Header="IBC">
+                <Label Content="Text goes here! 2"/>
+            </TabItem>
+            <TabItem Header="Xfone">
+                <Label Content="Text goes here! 3"/>
+            </TabItem>
+            <TabItem Header="Iron Source">
+                <Label Content="Text goes here! 4"/>
+            </TabItem>
+        </TabControl>
+           
+    </DockPanel>
+      
+
+</Window>
