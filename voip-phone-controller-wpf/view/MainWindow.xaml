@@ -19,7 +19,14 @@
         
         <TabControl DockPanel.Dock="Left" TabStripPlacement="Left" >
             <TabItem Header="NOC">
-                <DataGrid x:Name="CustomerGrid" ItemsSource="{Binding}" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="CustomerGrid_SelectionChanged"/>
+                <DataGrid x:Name="DataGridXMAL" ItemsSource="{Binding Source=list}" SelectionChanged="DataGridXMAL_SelectionChanged" MouseDoubleClick="DataGridXMAL_DoubleClick" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Call Number" Binding="{Binding CallNumber}"/>
+                        <DataGridTextColumn Header="Company" Binding="{Binding Company}"/>
+                        <DataGridTextColumn Header="Role" Binding="{Binding Role}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
             </TabItem>
             <TabItem Header="IBC">
                 <Label Content="Text goes here! 2"/>

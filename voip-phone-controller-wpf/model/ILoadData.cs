@@ -8,6 +8,6 @@ namespace voip_phone_controller_wpf.model
 {
     interface ILoadData
     {
-        List<ContentItem> LoadData();
+        List<ContactModel> LoadData();
     }
 }

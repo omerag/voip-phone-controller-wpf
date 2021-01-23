@@ -18,9 +18,9 @@ namespace voip_phone_controller_wpf.test
 
         public void runTest()
         {
-            List<ContentItem> contentItems = loadData.LoadData();
+            List<ContactModel> contentItems = loadData.LoadData();
 
-            foreach(ContentItem item in contentItems)
+            foreach(ContactModel item in contentItems)
             {
                 string itemPrint = "name: " + item.Name + "\ncall number: " + item.CallNumber + "\ncompany: " + item.Company + "\nrole: " + item.Role;
                 Console.WriteLine(itemPrint);

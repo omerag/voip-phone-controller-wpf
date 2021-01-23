@@ -13,4 +13,6 @@ C:\Users\SAPIR-PC\Desktop\Omer\DEV\c-sharp\voip-phone-controller-wpf\voip-phone-
 C:\Users\SAPIR-PC\Desktop\Omer\DEV\c-sharp\voip-phone-controller-wpf\voip-phone-controller-wpf\obj\Debug\voip-phone-controller-wpf.csproj.CoreCompileInputs.cache
 C:\Users\SAPIR-PC\Desktop\Omer\DEV\c-sharp\voip-phone-controller-wpf\voip-phone-controller-wpf\obj\Debug\voip-phone-controller-wpf.exe
 C:\Users\SAPIR-PC\Desktop\Omer\DEV\c-sharp\voip-phone-controller-wpf\voip-phone-controller-wpf\obj\Debug\voip-phone-controller-wpf.pdb
-C:\Users\SAPIR-PC\Desktop\Omer\DEV\c-sharp\voip-phone-controller-wpf\voip-phone-controller-wpf\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\SAPIR-PC\Desktop\Omer\DEV\c-sharp\voip-phone-controller-wpf\voip-phone-controller-wpf\bin\Debug\Caliburn.Micro.dll
+C:\Users\SAPIR-PC\Desktop\Omer\DEV\c-sharp\voip-phone-controller-wpf\voip-phone-controller-wpf\bin\Debug\Caliburn.Micro.xml
+C:\Users\SAPIR-PC\Desktop\Omer\DEV\c-sharp\voip-phone-controller-wpf\voip-phone-controller-wpf\obj\Debug\voip-phone-controller-wpf.csproj.CopyComplete

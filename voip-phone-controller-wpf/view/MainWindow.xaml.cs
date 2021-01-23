@@ -26,7 +26,13 @@ namespace voip_phone_controller_wpf
         public MainWindow()
         {
             InitializeComponent();
+            FillDataGrid();
+        }
 
+        void FillDataGrid()
+        {
+            BindContactList bindContactList = new BindContactList(DataGridXMAL);
+            bindContactList.fillData();
         }
 
         private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -63,6 +69,16 @@ namespace voip_phone_controller_wpf
         }
 
         private void CustomerGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DataGridXMAL_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void DataGridXMAL_DoubleClick(object sender, RoutedEventArgs e)
         {
 
         }
