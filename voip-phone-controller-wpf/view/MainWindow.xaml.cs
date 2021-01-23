@@ -27,6 +27,7 @@ namespace voip_phone_controller_wpf
     {
 
         private GetRequestDispatcher getRequestDispacher;
+        private PhoneData phoneData;
 
         public MainWindow()
         {
@@ -37,7 +38,8 @@ namespace voip_phone_controller_wpf
 
         private void InitObjects()
         {
-            getRequestDispacher = new GetRequestDispatcher("http://localhost", "501");
+            getRequestDispacher = new GetRequestDispatcher();
+            phoneData = new PhoneData(this);
         }
 
         void FillDataGrid()
@@ -48,18 +50,20 @@ namespace voip_phone_controller_wpf
 
         private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            
         }
 
         private void CallBtn(object sender, RoutedEventArgs e)
         {
-            string response = getRequestDispacher.SendCall(CallNumberTextbox.Text);
+            phoneData.setProperData();
+            string response = getRequestDispacher.SendCall(phoneData.ip, phoneData.number, CallNumberTextbox.Text);
             Console.WriteLine(response);
         }
 
         private void HangBtn(object sender, RoutedEventArgs e)
         {
-            string response = getRequestDispacher.SendHang();
+            phoneData.setProperData();
+            string response = getRequestDispacher.SendHang(phoneData.ip, phoneData.number);
             Console.WriteLine(response);
         }
 
@@ -93,6 +97,13 @@ namespace voip_phone_controller_wpf
         private void DataGridXMAL_DoubleClick(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void RadioBtnClick(object sender, RoutedEventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+
+            //radioButton.IsChecked = true;
         }
     }
 }

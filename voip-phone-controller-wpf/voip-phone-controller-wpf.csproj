@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="control\BindContactList.cs" />
     <Compile Include="control\GetRequestDispatcher.cs" />
+    <Compile Include="control\PhoneData.cs" />
     <Compile Include="control\UrlBuilder.cs" />
     <Compile Include="model\ContactModel.cs" />
     <Compile Include="model\ILoadData.cs" />

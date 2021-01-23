@@ -9,20 +9,17 @@ namespace voip_phone_controller_wpf.control
 {
     class GetRequestDispatcher
     {
-        public string BaseURL { get; set; }
 
-        public string LineExtension { get; set; }
-        
-        public GetRequestDispatcher(string baseURL, string lineExtension)
+ 
+        public GetRequestDispatcher()
         {
-            BaseURL = baseURL ?? throw new ArgumentNullException(nameof(baseURL));
-            LineExtension = lineExtension ?? throw new ArgumentNullException(nameof(lineExtension));
+
         }
 
-        public string SendCall(string callNumber)
+        public string SendCall(string PhoneIp,string LineExtension, string callNumber)
         {
 
-            UrlBuilder urlBuilder = new UrlBuilder(BaseURL, LineExtension, callNumber);
+            UrlBuilder urlBuilder = new UrlBuilder(PhoneIp, LineExtension, callNumber);
 
             string url = urlBuilder.build();
             Uri uri = new Uri(url);
@@ -48,7 +45,7 @@ namespace voip_phone_controller_wpf.control
             }
         }
 
-        public string SendHang()
+        public string SendHang(String BaseURL, string LineExtension)
         {
             UrlBuilder urlBuilder = new UrlBuilder(BaseURL, LineExtension, "");
 

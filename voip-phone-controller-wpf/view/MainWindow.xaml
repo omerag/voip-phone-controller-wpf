@@ -13,6 +13,12 @@
             <TextBox x:Name="CallNumberTextbox" DockPanel.Dock="Left" Text="Enter number..." TextAlignment="Center" Margin="20,10" Height="22" MinWidth="100" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged" PreviewTextInput="NumberValidationTextBox" MouseDoubleClick="ClearTextbox"/>
             <Button DockPanel.Dock="Right" Width="50" Height="50" Content="CALL" HorizontalAlignment="Right" Margin="20,10" IsDefault="True" Click="CallBtn"/>
             <Button DockPanel.Dock="Right" Width="50" Height="50" Content="HANG" HorizontalAlignment="Right" Margin="20,10" IsCancel="True" Click="HangBtn"/>
+            <StackPanel >
+                <Label>Have Fun ;-) </Label>
+                <RadioButton x:Name="RadioBtnNoc1" IsChecked="True" Click="RadioBtnClick">NOC1</RadioButton>
+                <RadioButton x:Name="RadioBtnNoc2" Click="RadioBtnClick">NOC2</RadioButton>
+                <RadioButton x:Name="RadioBtnNoc3" Click="RadioBtnClick">NOC3</RadioButton>
+            </StackPanel>
 
 
         </DockPanel>

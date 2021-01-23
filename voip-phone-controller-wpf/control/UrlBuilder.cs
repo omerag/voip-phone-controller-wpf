@@ -23,7 +23,9 @@ namespace voip_phone_controller_wpf.control
 
         public string build()
         {
-            return BaseURL + "/" + CallNumber + "/" + LineExtension;
+            //https://10.8.21.55/servlet?key=number=0525673458&outgoing_uri=503
+
+            return @"http://" + BaseURL + "/servlet?key=number=" + CallNumber + "&outgoing_uri=" + LineExtension;
         }
     }
 }
