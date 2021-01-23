@@ -10,16 +10,16 @@
     
     <DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <TextBox DockPanel.Dock="Left" Text="hellloooo" TextAlignment="Center" Margin="20,10" Height="22" MinWidth="100" VerticalContentAlignment="Center"/>
-            <Button DockPanel.Dock="Right" Width="50" Height="50" Content="CALL" HorizontalAlignment="Right" Margin="20,10" IsDefault="True"/>
-            <Button DockPanel.Dock="Right" Width="50" Height="50" Content="HANG" HorizontalAlignment="Right" Margin="20,10" IsCancel="True"/>
+            <TextBox DockPanel.Dock="Left" Text="Enter number..." TextAlignment="Center" Margin="20,10" Height="22" MinWidth="100" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged" PreviewTextInput="NumberValidationTextBox" MouseDoubleClick="ClearTextbox"/>
+            <Button DockPanel.Dock="Right" Width="50" Height="50" Content="CALL" HorizontalAlignment="Right" Margin="20,10" IsDefault="True" Click="CallBtn"/>
+            <Button DockPanel.Dock="Right" Width="50" Height="50" Content="HANG" HorizontalAlignment="Right" Margin="20,10" IsCancel="True" Click="HangBtn"/>
 
 
         </DockPanel>
         
         <TabControl DockPanel.Dock="Left" TabStripPlacement="Left" >
             <TabItem Header="NOC">
-                <Label Content="Text goes here!"/>
+                <DataGrid x:Name="CustomerGrid" ItemsSource="{Binding}" AlternatingRowBackground="LightBlue" AlternationCount="2" SelectionChanged="CustomerGrid_SelectionChanged"/>
             </TabItem>
             <TabItem Header="IBC">
                 <Label Content="Text goes here! 2"/>
