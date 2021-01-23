@@ -10,7 +10,7 @@
     
     <DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <TextBox DockPanel.Dock="Left" Text="Enter number..." TextAlignment="Center" Margin="20,10" Height="22" MinWidth="100" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged" PreviewTextInput="NumberValidationTextBox" MouseDoubleClick="ClearTextbox"/>
+            <TextBox x:Name="CallNumberTextbox" DockPanel.Dock="Left" Text="Enter number..." TextAlignment="Center" Margin="20,10" Height="22" MinWidth="100" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged" PreviewTextInput="NumberValidationTextBox" MouseDoubleClick="ClearTextbox"/>
             <Button DockPanel.Dock="Right" Width="50" Height="50" Content="CALL" HorizontalAlignment="Right" Margin="20,10" IsDefault="True" Click="CallBtn"/>
             <Button DockPanel.Dock="Right" Width="50" Height="50" Content="HANG" HorizontalAlignment="Right" Margin="20,10" IsCancel="True" Click="HangBtn"/>
 
@@ -19,7 +19,7 @@
         
         <TabControl DockPanel.Dock="Left" TabStripPlacement="Left" >
             <TabItem Header="NOC">
-                <DataGrid x:Name="DataGridXMAL" ItemsSource="{Binding Source=list}" SelectionChanged="DataGridXMAL_SelectionChanged" MouseDoubleClick="DataGridXMAL_DoubleClick" IsReadOnly="True">
+                <DataGrid x:Name="DataGridXMAL" ItemsSource="{Binding Source=list}" SelectionChanged="DataGridXMAL_SelectionChanged" MouseDoubleClick="DataGridXMAL_DoubleClick" SelectedItem="DataGridXMAL_SelectedItemChanged" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                         <DataGridTextColumn Header="Call Number" Binding="{Binding CallNumber}"/>

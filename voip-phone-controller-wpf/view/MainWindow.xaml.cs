@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -13,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using voip_phone_controller_wpf.control;
 using voip_phone_controller_wpf.model;
 using voip_phone_controller_wpf.test;
 
@@ -23,10 +25,19 @@ namespace voip_phone_controller_wpf
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private GetRequestDispatcher getRequestDispacher;
+
         public MainWindow()
         {
             InitializeComponent();
             FillDataGrid();
+            InitObjects();
+        }
+
+        private void InitObjects()
+        {
+            getRequestDispacher = new GetRequestDispatcher("http://localhost", "501");
         }
 
         void FillDataGrid()
@@ -42,12 +53,14 @@ namespace voip_phone_controller_wpf
 
         private void CallBtn(object sender, RoutedEventArgs e)
         {
-
+            string response = getRequestDispacher.SendCall(CallNumberTextbox.Text);
+            Console.WriteLine(response);
         }
 
         private void HangBtn(object sender, RoutedEventArgs e)
         {
-
+            string response = getRequestDispacher.SendHang();
+            Console.WriteLine(response);
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -68,13 +81,12 @@ namespace voip_phone_controller_wpf
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void CustomerGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void DataGridXMAL_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            DataGrid dataGrid = sender as DataGrid;
+            ContactModel row = (ContactModel)dataGrid.SelectedItems[0];
+
+            CallNumberTextbox.Text = row.CallNumber;
 
         }
 

@@ -29,8 +29,5 @@ namespace voip_phone_controller_wpf.model
                 
             }
         }
-
-
-
     }
 }
