@@ -31,7 +31,7 @@ namespace voip_phone_controller_wpf.control
                 ip = "10.8.21.50";
                 number = "502";
             }
-            else if (mainWindow.RadioBtnNoc2.IsChecked.GetValueOrDefault())
+            else if (mainWindow.RadioBtnNoc3.IsChecked.GetValueOrDefault())
             {
                 ip = "10.8.21.55";
                 number = "503";
