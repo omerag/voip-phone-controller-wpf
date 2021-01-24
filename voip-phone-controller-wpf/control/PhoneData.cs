@@ -23,17 +23,17 @@ namespace voip_phone_controller_wpf.control
         {
             if (mainWindow.RadioBtnNoc1.IsChecked.GetValueOrDefault())
             {
-                ip = "192.0.0.1";
+                ip = "10.8.21.60";
                 number = "501";
             }
             else if (mainWindow.RadioBtnNoc2.IsChecked.GetValueOrDefault())
             {
-                ip = "192.0.0.2";
+                ip = "10.8.21.50";
                 number = "502";
             }
             else if (mainWindow.RadioBtnNoc2.IsChecked.GetValueOrDefault())
             {
-                ip = "192.0.0.3";
+                ip = "10.8.21.55";
                 number = "503";
             }
         }
