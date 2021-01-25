@@ -23,18 +23,18 @@ namespace voip_phone_controller_wpf.control
         {
             if (mainWindow.RadioBtnNoc1.IsChecked.GetValueOrDefault())
             {
-                ip = "10.8.21.60";
+                ip = "10.8.21.50";
                 number = "501";
             }
             else if (mainWindow.RadioBtnNoc2.IsChecked.GetValueOrDefault())
             {
-                ip = "10.8.21.50";
-                number = "502";
+                ip = "10.8.21.55";
+                number = "503";
             }
             else if (mainWindow.RadioBtnNoc3.IsChecked.GetValueOrDefault())
             {
-                ip = "10.8.21.55";
-                number = "503";
+                ip = "10.8.21.94";
+                number = "505";
             }
         }
     }

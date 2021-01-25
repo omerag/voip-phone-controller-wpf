@@ -80,6 +80,7 @@
     <Compile Include="model\ContactModel.cs" />
     <Compile Include="model\ILoadData.cs" />
     <Compile Include="model\LoadDataFromCSV.cs" />
+    <Compile Include="model\Log.cs" />
     <Compile Include="test\Tests.cs" />
     <Compile Include="view\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

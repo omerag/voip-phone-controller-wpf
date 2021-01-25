@@ -22,7 +22,7 @@ namespace voip_phone_controller_wpf.test
 
             foreach(ContactModel item in contentItems)
             {
-                string itemPrint = "name: " + item.Name + "\ncall number: " + item.CallNumber + "\ncompany: " + item.Company + "\nrole: " + item.Role;
+                string itemPrint = "name: " + item.Name + "\ncall number: " + item.CallNumber + "\ncompany: " + item.Company;
                 Console.WriteLine(itemPrint);
             }
         }

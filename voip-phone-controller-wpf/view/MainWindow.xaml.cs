@@ -53,18 +53,23 @@ namespace voip_phone_controller_wpf
             
         }
 
-        private void CallBtn(object sender, RoutedEventArgs e)
+
+        private async void CallBtnAsync(object sender, RoutedEventArgs e)
         {
             phoneData.setProperData();
-            string response = getRequestDispacher.SendCall(phoneData.ip, phoneData.number, CallNumberTextbox.Text);
+            string response = await getRequestDispacher.SendCall(phoneData.ip, phoneData.number, CallNumberTextbox.Text);
             Console.WriteLine(response);
         }
 
         private void HangBtn(object sender, RoutedEventArgs e)
         {
+            /* 
+             * 
+             * no hang for now
             phoneData.setProperData();
             string response = getRequestDispacher.SendHang(phoneData.ip, phoneData.number);
             Console.WriteLine(response);
+            */
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -101,7 +106,7 @@ namespace voip_phone_controller_wpf
 
         private void RadioBtnClick(object sender, RoutedEventArgs e)
         {
-            RadioButton radioButton = sender as RadioButton;
+            //RadioButton radioButton = sender as RadioButton;
 
             //radioButton.IsChecked = true;
         }

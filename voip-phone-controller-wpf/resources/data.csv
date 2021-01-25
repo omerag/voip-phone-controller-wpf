@@ -1,13 +1,13 @@
-name,callNumber,company,role
-omer,0523330411,oasis,noc
-omer,0523330412,oasis,noc
-omer,0523330413,ibc,noc
-omer,0523330414,ibc,noc
-omer,0523330415,ibc,noc
-omer,0523330416,iron source,noc
-omer,0523330417,iron source,noc
-omer,0523330418,iron source,noc
-omer,0523330419,xfone,noc
-omer,0523330420,xfone,noc
-omer,0523330421,xfone,noc
-omer,0523330422,xfone,noc
+display_name,office_number,mobile_number,other_number,line,ring,group_id_name
+omer,,0523330411,,,,oasis
+omer,,0523330412,,,,oasis
+omer,,0523330413,,,,ibc
+omer,,0523330414,,,,ibc
+omer,,0523330415,,,,ibc
+omer,,0523330416,,,,iron source
+omer,,0523330417,,,,iron source
+omer,,0523330418,,,,iron source
+omer,,0523330419,,,,xfone
+omer,,0523330420,,,,xfone
+omer,,0523330421,,,,xfone
+omer,,0523330422,,,,xfone

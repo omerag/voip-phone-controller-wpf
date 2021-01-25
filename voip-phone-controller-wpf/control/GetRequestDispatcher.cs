@@ -4,22 +4,21 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using voip_phone_controller_wpf.model;
 
 namespace voip_phone_controller_wpf.control
 {
     class GetRequestDispatcher
     {
-
  
         public GetRequestDispatcher()
         {
-
         }
 
-        public string SendCall(string PhoneIp,string LineExtension, string callNumber)
+        public async Task<string> SendCall(string phoneIp,string lineExtension, string callNumber)
         {
 
-            UrlBuilder urlBuilder = new UrlBuilder(PhoneIp, LineExtension, callNumber);
+            UrlBuilder urlBuilder = new UrlBuilder(phoneIp, lineExtension, callNumber);
 
             string url = urlBuilder.build();
             Uri uri = new Uri(url);
@@ -37,12 +36,16 @@ namespace voip_phone_controller_wpf.control
             try
             {
                 response = (HttpWebResponse)request.GetResponse();
+                Log.AddCall(phoneIp, lineExtension ,callNumber, "Succeeded");
                 return response.ToString();
             }
             catch (WebException we)
             {
+                Log.AddCall(phoneIp, lineExtension, callNumber, "Failed");
                 return we.Message.ToString();
             }
+
+            
         }
 
         public string SendHang(String BaseURL, string LineExtension)
