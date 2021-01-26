@@ -1,6 +1,0 @@
-New call log file:
-ip 10.8.21.50, line: called Enter number... Failed
-ip 10.8.21.50, line: 501called 0523330411 Failed
-ip 10.8.21.55, line: 503called 0523330411 Failed
-ip 10.8.21.94, line: 505called 0523330411 Failed
-ip 10.8.21.55, line: 503called 0523330418 Failed
