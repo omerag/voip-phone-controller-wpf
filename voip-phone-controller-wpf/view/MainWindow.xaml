@@ -10,14 +10,25 @@
     
     <DockPanel>
         <DockPanel DockPanel.Dock="Top">
+            <Image Source="../resources/LOGO.png" Height="71" DockPanel.Dock="Left" Width="100" Margin="5,0,0,0"/>
             <TextBox x:Name="CallNumberTextbox" DockPanel.Dock="Left" Text="Enter number..." TextAlignment="Center" Margin="20,10" Height="22" MinWidth="100" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged" PreviewTextInput="NumberValidationTextBox" MouseDoubleClick="ClearTextbox"/>
-            <Button DockPanel.Dock="Right" Width="50" Height="50" Content="CALL" HorizontalAlignment="Right" Margin="20,10" IsDefault="True" Click="CallBtnAsync"/>
-            <Button DockPanel.Dock="Right" Width="50" Height="50" Content="HANG" HorizontalAlignment="Right" Margin="20,10" IsCancel="True" Click="HangBtn"/>
-            <StackPanel >
-                <Label>Have Fun ;-) </Label>
-                <RadioButton x:Name="RadioBtnNoc1" IsChecked="True" Click="RadioBtnClick">NOC1</RadioButton>
-                <RadioButton x:Name="RadioBtnNoc2" Click="RadioBtnClick">NOC2</RadioButton>
-                <RadioButton x:Name="RadioBtnNoc3" Click="RadioBtnClick">NOC3</RadioButton>
+            <Button DockPanel.Dock="Right" Width="50" Height="50"  HorizontalAlignment="Right" Margin="20,10" IsDefault="True" Click="CallBtnAsync" Background="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="../resources/GRNv2.png" ></Image>
+                </StackPanel>
+            </Button>
+           
+            <Button DockPanel.Dock="Right" Width="50" Height="50" HorizontalAlignment="Right" Margin="20,10" IsCancel="True" Click="HangBtn" Background="Transparent" BorderThickness="0" >
+                <StackPanel>
+                    <Image Source="../resources/RED.png" ></Image>
+                </StackPanel>
+            </Button>
+
+            <StackPanel Margin="0,-3,0,0" >
+                <Label Margin="0" >Extension:</Label>
+                <RadioButton x:Name="RadioBtnNoc1" IsChecked="True" Click="RadioBtnClick">NOC2 (501)</RadioButton>
+                <RadioButton x:Name="RadioBtnNoc2" Click="RadioBtnClick">NOC3 (503)</RadioButton>
+                <RadioButton x:Name="RadioBtnNoc3" Click="RadioBtnClick">NOC5 (505)</RadioButton>
             </StackPanel>
 
 
@@ -25,7 +36,7 @@
         
         <TabControl DockPanel.Dock="Left" TabStripPlacement="Left" >
             <TabItem Header="NOC">
-                <DataGrid x:Name="DataGridXMAL" ItemsSource="{Binding Source=list}" SelectionChanged="DataGridXMAL_SelectionChanged" MouseDoubleClick="DataGridXMAL_DoubleClick" SelectedItem="DataGridXMAL_SelectedItemChanged" IsReadOnly="True">
+                <DataGrid x:Name="DataGridXMAL" ItemsSource="{Binding Source=list}" SelectionChanged="DataGridXMAL_SelectionChanged" MouseDoubleClick="DataGridXMAL_DoubleClick" SelectedItem="DataGridXMAL_SelectedItemChanged" IsReadOnly="True" Margin="5,0,-5,0">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
                         <DataGridTextColumn Header="Call Number" Binding="{Binding CallNumber}"/>
@@ -43,7 +54,8 @@
                 <Label Content="Text goes here! 4"/>
             </TabItem>
         </TabControl>
-           
+        
+
     </DockPanel>
       
 
