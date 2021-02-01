@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace voip_phone_controller_wpf.test
 
         public void runTest()
         {
-            List<ContactModel> contentItems = loadData.LoadData();
+            ObservableCollection<ContactModel> contentItems = loadData.LoadData();
 
             foreach(ContactModel item in contentItems)
             {

@@ -33,28 +33,42 @@
 
 
         </DockPanel>
-        
-        <TabControl DockPanel.Dock="Left" TabStripPlacement="Left" >
-            <TabItem Header="NOC">
-                <DataGrid x:Name="DataGridXMAL" ItemsSource="{Binding Source=list}" SelectionChanged="DataGridXMAL_SelectionChanged" MouseDoubleClick="DataGridXMAL_DoubleClick" SelectedItem="DataGridXMAL_SelectedItemChanged" IsReadOnly="True" Margin="5,0,-5,0">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                        <DataGridTextColumn Header="Call Number" Binding="{Binding CallNumber}"/>
-                        <DataGridTextColumn Header="Company" Binding="{Binding Company}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </TabItem>
-            <TabItem Header="IBC">
-                <Label Content="Text goes here! 2"/>
-            </TabItem>
-            <TabItem Header="Xfone">
-                <Label Content="Text goes here! 3"/>
-            </TabItem>
-            <TabItem Header="Iron Source">
-                <Label Content="Text goes here! 4"/>
-            </TabItem>
-        </TabControl>
-        
+
+        <DataGrid DockPanel.Dock="Bottom" x:Name="DataGridXMAL"  SelectionChanged="DataGridSelectionChanged" MouseDoubleClick="DataGridXMAL_DoubleClick" SelectedItem="DataGridXMAL_SelectedItemChanged" IsReadOnly="True" Margin="0,0,0,0">
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                                        <Expander
+                                                BorderBrush="Azure"
+                                                IsExpanded="True"
+                                                Background="Tan"
+                                                BorderThickness="0,0,0,1">
+                                            <Expander.Header>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock VerticalAlignment="Center"
+                                                                       FontWeight="Bold"
+                                                                       Text="{Binding Path=Name}"
+                                                                       Width="100"/>
+
+                                                </StackPanel>
+                                            </Expander.Header>
+                                            <Expander.Content>
+                                                <ItemsPresenter/>
+                                            </Expander.Content>
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+        </DataGrid>
+
 
     </DockPanel>
       

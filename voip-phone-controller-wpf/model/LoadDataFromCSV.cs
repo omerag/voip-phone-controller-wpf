@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,12 +10,12 @@ namespace voip_phone_controller_wpf.model
 {
     class LoadDataFromCSV : ILoadData
     {
-        public List<ContactModel> LoadData()
+        public ObservableCollection<ContactModel> LoadData()
         {
             string path = "../../resources/data.csv";
 
             StreamReader reader = new StreamReader(path);
-            List<ContactModel> contentItems = new List<ContactModel>();
+            ObservableCollection<ContactModel> contentItems = new ObservableCollection<ContactModel>();
 
             reader.ReadLine(); //skip first row
             Console.WriteLine("***starting read contacts***");

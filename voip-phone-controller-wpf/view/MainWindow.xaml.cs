@@ -44,8 +44,9 @@ namespace voip_phone_controller_wpf
 
         void FillDataGrid()
         {
-            BindContactList bindContactList = new BindContactList(DataGridXMAL);
-            bindContactList.fillData();
+            BindContactList bindContactList = new BindContactList();
+            DataGridXMAL.ItemsSource = bindContactList.ListCollectionView;
+            //bindContactList.fillData();
         }
 
         private void tabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -90,7 +91,7 @@ namespace voip_phone_controller_wpf
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void DataGridXMAL_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        public void DataGridSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataGrid dataGrid = sender as DataGrid;
             ContactModel row = (ContactModel)dataGrid.SelectedItems[0];
@@ -99,7 +100,7 @@ namespace voip_phone_controller_wpf
 
         }
 
-        private void DataGridXMAL_DoubleClick(object sender, RoutedEventArgs e)
+        public void DataGridXMAL_DoubleClick(object sender, RoutedEventArgs e)
         {
 
         }

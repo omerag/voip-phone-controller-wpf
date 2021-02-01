@@ -126,9 +126,6 @@
     <Resource Include="resources\RED.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="resources\OASIS.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="resources\LOGO.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

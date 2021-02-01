@@ -6,28 +6,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace voip_phone_controller_wpf.model
 {
     class BindContactList
     {
-        public List<ContactModel> ContactsList { get; set; }
-        DataGrid dataGrid;
+        public ObservableCollection<ContactModel> ContactsList { get; set; }
+        public ListCollectionView ListCollectionView { get; set; }
 
-        public BindContactList(DataGrid dataGrid)
+        public BindContactList()
         {
             ContactsList = new LoadDataFromCSV().LoadData();
-            this.dataGrid = dataGrid;
-        }
 
-        public void fillData()
-        {
-            foreach(ContactModel contact in ContactsList)
-            {
-                dataGrid.ClearValue(ItemsControl.ItemsSourceProperty);
-                dataGrid.Items.Add(contact);
-                
-            }
+            ListCollectionView = new ListCollectionView(ContactsList);
+            ListCollectionView.GroupDescriptions.Add(new PropertyGroupDescription("Company"));
         }
     }
 }
