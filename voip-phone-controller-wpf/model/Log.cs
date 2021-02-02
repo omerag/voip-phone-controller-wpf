@@ -15,10 +15,12 @@ namespace voip_phone_controller_wpf.model
         {
             string path = "logs/exit calls.txt";
 
+
             // This text is added only once to the file.
             if (!File.Exists(path))
             {
                 // Create a file to write to.
+                Directory.CreateDirectory("logs");
                 using (StreamWriter sw = File.CreateText(path))
                 {
                     sw.WriteLine("New call log file:");

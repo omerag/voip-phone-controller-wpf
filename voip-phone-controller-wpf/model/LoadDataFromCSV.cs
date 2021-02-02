@@ -13,7 +13,7 @@ namespace voip_phone_controller_wpf.model
         public ObservableCollection<ContactModel> LoadData()
         {
             string path = "../../resources/data.csv";
-
+            Directory.CreateDirectory("../../resources/");
             StreamReader reader = new StreamReader(path);
             ObservableCollection<ContactModel> contentItems = new ObservableCollection<ContactModel>();
 
