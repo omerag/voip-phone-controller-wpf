@@ -24,7 +24,7 @@ namespace voip_phone_controller_wpf.model
                 string line = reader.ReadLine();
                 string[] values = line.Split(',');
 
-                contentItems.Add(new ContactModel(values[0], values[2], values[6]));
+                contentItems.Add(new ContactModel(values[0], values[1], values[2], values[3], values[4], values[5]));
             }
 
             reader.Close();
