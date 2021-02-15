@@ -12,11 +12,20 @@ namespace voip_phone_controller_wpf.model
         public string CallNumber { get; private set; }
         public string Company { get; private set; }
 
-        public ContactModel(string name, string callNumber, string company)
+        public string Position { get; private set; }
+
+        public string Email { get; private set; }
+
+        public string Comment { get; private set; }
+
+        public ContactModel(string name, string callNumber, string company, string position, string email, string comment)
         {
-            this.Name = name;
-            this.CallNumber = callNumber;
-            this.Company = company;
+            Name = name;
+            CallNumber = callNumber;
+            Company = company;
+            Position = position;
+            Email = email;
+            Comment = comment;
         }
     }
 }
