@@ -33,9 +33,10 @@ namespace voip_phone_controller_wpf.control
             request.Credentials = myCredentialCache;
 
             HttpWebResponse response;
+            
             try
             {
-                response = (HttpWebResponse)request.GetResponse();
+                response = (HttpWebResponse)await request.GetResponseAsync();
                 Log.AddCall(phoneIp, lineExtension ,callNumber, "Succeeded");
                 return response.ToString();
             }
