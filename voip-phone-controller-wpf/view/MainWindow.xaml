@@ -14,11 +14,11 @@
             <DockPanel Margin="10,10,10,10">
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                     <Label DockPanel.Dock="Left" Content="Call Number:  "/>
-                    <TextBox x:Name="CallNumberTextbox" Text="Enter number..." TextAlignment="Center" Margin="0,0,0,0" Height="22" MinWidth="100" VerticalContentAlignment="Center" TextChanged="TextBox_TextChanged" PreviewTextInput="NumberValidationTextBox" MouseDoubleClick="ClearTextbox"/>
+                    <TextBox x:Name="CallNumberTextbox" Text="Enter number..." TextAlignment="Center" Margin="0,0,0,0" Height="22" MinWidth="100" VerticalContentAlignment="Center" PreviewTextInput="NumberValidationTextBox" MouseDoubleClick="ClearTextbox"/>
                 </StackPanel>
                 <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
                     <Label DockPanel.Dock="Bottom" Content="Search Name: " Margin="0,10,0,0"/>
-                    <TextBox x:Name="SearchNumberTextbox" Text="" TextAlignment="Center" Margin="0,10,0,0" Height="22" Width="100" VerticalContentAlignment="Center"/>
+                    <TextBox x:Name="SearchNumberTextbox" Text="" TextAlignment="Center" Margin="0,10,0,0" Height="22" Width="100" VerticalContentAlignment="Center" TextChanged="SearchNumberTextbox_TextChanged"/>
                 </StackPanel>
 
             </DockPanel>

@@ -28,6 +28,7 @@ namespace voip_phone_controller_wpf
 
         private GetRequestDispatcher getRequestDispacher;
         private PhoneData phoneData;
+        private BindContactList bindContactList;
 
         public MainWindow()
         {
@@ -44,7 +45,7 @@ namespace voip_phone_controller_wpf
 
         void FillDataGrid()
         {
-            BindContactList bindContactList = new BindContactList();
+            bindContactList = new BindContactList();
             DataGridXMAL.ItemsSource = bindContactList.ListCollectionView;
             //bindContactList.fillData();
         }
@@ -110,6 +111,16 @@ namespace voip_phone_controller_wpf
             //RadioButton radioButton = sender as RadioButton;
 
             //radioButton.IsChecked = true;
+        }
+
+        private void SearchNumberTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+            if(sender != null)
+            {
+                TextBox textBox = sender as TextBox;
+                DataGridXMAL.ItemsSource = bindContactList.GetFilteredListCollectionView(textBox.Text);
+            }
         }
     }
 }
