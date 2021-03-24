@@ -27,8 +27,8 @@
                     <Image Source="../resources/GRNv2.png" ></Image>
                 </StackPanel>
             </Button>
-           
-            <Button DockPanel.Dock="Right" Width="50" Height="50" HorizontalAlignment="Right" Margin="20,10" IsCancel="True" Click="HangBtn" Background="Transparent" BorderThickness="0" >
+
+            <Button DockPanel.Dock="Right" Width="50" Height="50" HorizontalAlignment="Right" Margin="20,10" IsCancel="True" Click="HangBtnAsync" Background="Transparent" BorderThickness="0" >
                 <StackPanel>
                     <Image Source="../resources/RED.png" ></Image>
                 </StackPanel>

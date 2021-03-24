@@ -27,7 +27,7 @@ namespace voip_phone_controller_wpf
     {
 
         private GetRequestDispatcher getRequestDispacher;
-        private PhoneData phoneData;
+        private PhoneSelector phoneData;
         private BindContactList bindContactList;
 
         public MainWindow()
@@ -40,7 +40,7 @@ namespace voip_phone_controller_wpf
         private void InitObjects()
         {
             getRequestDispacher = new GetRequestDispatcher();
-            phoneData = new PhoneData(this);
+            phoneData = new PhoneSelector(this);
         }
 
         void FillDataGrid()
@@ -59,19 +59,17 @@ namespace voip_phone_controller_wpf
         private async void CallBtnAsync(object sender, RoutedEventArgs e)
         {
             phoneData.setProperData();
-            string response = await getRequestDispacher.SendCall(phoneData.ip, phoneData.number, CallNumberTextbox.Text);
-            Console.WriteLine(response);
+             var response = await getRequestDispacher.SendCall(phoneData.ip, phoneData.number, CallNumberTextbox.Text);
+            //Console.WriteLine(response);
         }
 
-        private void HangBtn(object sender, RoutedEventArgs e)
+        private async void HangBtnAsync(object sender, RoutedEventArgs e)
         {
-            /* 
-             * 
-             * no hang for now
+         
             phoneData.setProperData();
-            string response = getRequestDispacher.SendHang(phoneData.ip, phoneData.number);
-            Console.WriteLine(response);
-            */
+            var response = await getRequestDispacher.SendHangAsync(phoneData.ip);
+            //Console.WriteLine(response);
+            
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

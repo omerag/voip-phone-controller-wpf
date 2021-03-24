@@ -20,7 +20,20 @@ namespace voip_phone_controller_wpf.control
 
             UrlBuilder urlBuilder = new UrlBuilder(phoneIp, lineExtension, callNumber);
 
-            string url = urlBuilder.build();
+            string url = urlBuilder.build(UrlBuilder.PhoneCommand.CALL);
+            return await sendGetRequestAsync(url);
+        }
+
+        public async Task<string> SendHangAsync(String BaseURL)
+        {
+            UrlBuilder urlBuilder = new UrlBuilder(BaseURL, "", "");
+
+            string url = urlBuilder.build(UrlBuilder.PhoneCommand.HANG_UP);
+            return await sendGetRequestAsync(url);
+        }
+
+        private async Task<string> sendGetRequestAsync(string url)
+        {
             Uri uri = new Uri(url);
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
 
@@ -33,50 +46,18 @@ namespace voip_phone_controller_wpf.control
             request.Credentials = myCredentialCache;
 
             HttpWebResponse response;
-            
+
             try
             {
                 response = (HttpWebResponse)await request.GetResponseAsync();
-                Log.AddCall(phoneIp, lineExtension ,callNumber, "Succeeded");
+                //Log.AddCall(phoneIp, lineExtension, callNumber, "Succeeded");
                 return response.ToString();
             }
             catch (WebException we)
             {
-                Log.AddCall(phoneIp, lineExtension, callNumber, "Failed");
+                //Log.AddCall(phoneIp, lineExtension, callNumber, "Failed");
                 return we.Message.ToString();
             }
-
-            
-        }
-
-        public string SendHang(String BaseURL, string LineExtension)
-        {
-            UrlBuilder urlBuilder = new UrlBuilder(BaseURL, LineExtension, "");
-
-            string url = urlBuilder.build();
-            Uri uri = new Uri(url);
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-
-            NetworkCredential myNetworkCredential = new NetworkCredential("admin", "admin");
-            CredentialCache myCredentialCache = new CredentialCache();
-
-            myCredentialCache.Add(uri, "Basic", myNetworkCredential);
-
-            request.PreAuthenticate = true;
-            request.Credentials = myCredentialCache;
-
-            HttpWebResponse response;
-            try
-            {
-                response = (HttpWebResponse)request.GetResponse();
-                return response.ToString();
-            }
-            catch (WebException we)
-            {
-                return we.Message.ToString();
-            }
-
-          
         }
     }
 }

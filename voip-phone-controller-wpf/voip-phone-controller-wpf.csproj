@@ -94,12 +94,14 @@
     </Compile>
     <Compile Include="control\BindContactList.cs" />
     <Compile Include="control\GetRequestDispatcher.cs" />
-    <Compile Include="control\PhoneData.cs" />
+    <Compile Include="model\PhoneModelDataLoad.cs" />
+    <Compile Include="control\PhoneSelector.cs" />
     <Compile Include="control\UrlBuilder.cs" />
     <Compile Include="model\ContactModel.cs" />
     <Compile Include="model\ILoadData.cs" />
     <Compile Include="model\LoadDataFromCSV.cs" />
     <Compile Include="model\Log.cs" />
+    <Compile Include="model\PhoneModel.cs" />
     <Compile Include="test\Tests.cs" />
     <Compile Include="view\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -130,6 +132,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="resources\data.csv" />
+    <None Include="resources\phone_model.csv" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
