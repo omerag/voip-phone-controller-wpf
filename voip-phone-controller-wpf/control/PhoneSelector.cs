@@ -24,22 +24,22 @@ namespace voip_phone_controller_wpf.control
             phoneModels = dataLoad.GetPhoneModels();
         }
 
-        public void setProperData()
+        public void setPhoneData()
         {
             if (mainWindow.RadioBtnNoc1.IsChecked.GetValueOrDefault())
             {
-                ip = phoneModels[0].IP; //"10.8.21.50";
-                number = phoneModels[0].IP; //"501";
+                ip = phoneModels[0].IP; 
+                number = phoneModels[0].IP; 
             }
             else if (mainWindow.RadioBtnNoc2.IsChecked.GetValueOrDefault())
             {
-                ip = phoneModels[1].IP; // "10.8.21.55";
-                number = phoneModels[1].IP; // "504";
+                ip = phoneModels[1].IP; 
+                number = phoneModels[1].IP; 
             }
             else if (mainWindow.RadioBtnNoc3.IsChecked.GetValueOrDefault())
             {
-                ip = phoneModels[2].IP; //"10.8.21.94";
-                number = phoneModels[2].IP; // "505";
+                ip = phoneModels[2].IP; 
+                number = phoneModels[2].IP;
             }
         }
     }

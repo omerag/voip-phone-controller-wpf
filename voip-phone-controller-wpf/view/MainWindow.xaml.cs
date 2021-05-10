@@ -58,15 +58,15 @@ namespace voip_phone_controller_wpf
 
         private async void CallBtnAsync(object sender, RoutedEventArgs e)
         {
-            phoneData.setProperData();
-             var response = await getRequestDispacher.SendCall(phoneData.ip, phoneData.number, CallNumberTextbox.Text);
+            phoneData.setPhoneData();
+             var response = await getRequestDispacher.SendCall(phoneData.ip, phoneData.number, CallNumberProcessor.ProcessPhoneNumber(CallNumberTextbox.Text));
             //Console.WriteLine(response);
         }
 
         private async void HangBtnAsync(object sender, RoutedEventArgs e)
         {
          
-            phoneData.setProperData();
+            phoneData.setPhoneData();
             var response = await getRequestDispacher.SendHangAsync(phoneData.ip);
             //Console.WriteLine(response);
             

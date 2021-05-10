@@ -93,6 +93,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="control\BindContactList.cs" />
+    <Compile Include="control\CallNumberProcessor.cs" />
     <Compile Include="control\GetRequestDispatcher.cs" />
     <Compile Include="model\PhoneModelDataLoad.cs" />
     <Compile Include="control\PhoneSelector.cs" />
