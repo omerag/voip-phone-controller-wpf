@@ -11,7 +11,7 @@
 <h4>How to connect phone to application:</h4>
 <p>Go to resource folder</p>
 <p>Edit phone_model.csv - enter Phone's IP (you can enter up to 3 phones) and save changes </p>
-<p>Go to your favorit browser and enter the phone's ip </p>
+<p>Go to your favorit browser and enter the phone's ip and phone extension</p>
 <p>Login with your admin and password </p>
 <p>Go to Features - Remote Control </p>
 <p>Enter your PC's IP and press confirm</p>
