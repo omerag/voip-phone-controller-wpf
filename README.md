@@ -9,8 +9,8 @@
 
 
 # How ot install:
-<p> Download the release folder and put in anywere on your hard drive. </p>
-<p> Link: https://github.com/omerag/voip-phone-controller-wpf/tree/master/release </p>
+<p> Download the release zip file and extract it in anywere on your hard drive. </p>
+<p> Link: https://github.com/omerag/voip-phone-controller-wpf/blob/master/release.zip </p>
 <p> in the resource folder you will find the cpntact list file and the phone data file - you should edit them and add your data </p>
 <p> Launch the application by clicking on voip-phone-controller-wpf.exe </p>
 
