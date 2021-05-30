@@ -8,7 +8,14 @@
 <image src="https://github.com/omerag/voip-phone-controller-wpf/blob/master/Images/Preview.jpg?raw=true"/>
 
 
-<h4>How to connect phone to application:</h4>
+# How ot install:
+<p> Download the release folder and put in anywere on your hard drive. </p>
+<p> Link: https://github.com/omerag/voip-phone-controller-wpf/tree/master/release </p>
+<p> in the resource folder you will find the cpntact list file and the phone data file - you should edit them and add your data </p>
+<p> Launch the application by clicking on voip-phone-controller-wpf.exe </p>
+
+
+# How to connect phone to application:
 <p>Go to resource folder</p>
 <p>Edit phone_model.csv - enter Phone's IP (you can enter up to 3 phones) and save changes </p>
 <p>Go to your favorit browser and enter the phone's ip and phone extension</p>
