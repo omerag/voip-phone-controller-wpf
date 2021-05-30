@@ -143,6 +143,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="release.zip" />
     <None Include="release\bin\1.0\voip-phone-controller-wpf.exe.config" />
     <None Include="release\resources\data.csv" />
     <None Include="release\resources\phone_model.csv" />
