@@ -43,7 +43,7 @@ namespace voip_phone_controller_wpf
             phoneData = new PhoneSelector(this);
         }
 
-        void FillDataGrid()
+        private void FillDataGrid()
         {
             bindContactList = new BindContactList();
             DataGridXMAL.ItemsSource = bindContactList.ListCollectionView;

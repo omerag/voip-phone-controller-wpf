@@ -14,23 +14,34 @@ namespace voip_phone_controller_wpf.model
         {
             string path = "../../resources/data.csv";
             Directory.CreateDirectory("../../resources/");
-            StreamReader reader = new StreamReader(path);
             ObservableCollection<ContactModel> contentItems = new ObservableCollection<ContactModel>();
 
-            reader.ReadLine(); //skip first row
-            Console.WriteLine("***starting read contacts***");
-            while (!reader.EndOfStream)
+            try
             {
-                string line = reader.ReadLine();
-                string[] values = line.Split(',');
+                StreamReader reader = new StreamReader(path);
 
-                contentItems.Add(new ContactModel(values[0], values[1], values[2], values[3], values[4], values[5]));
+                reader.ReadLine(); //skip first row
+                Console.WriteLine("***starting read contacts***");
+                while (!reader.EndOfStream)
+                {
+                    string line = reader.ReadLine();
+                    string[] values = line.Split(',');
+
+                    contentItems.Add(new ContactModel(values[0], values[1], values[2], values[3], values[4], values[5]));
+                }
+
+                reader.Close();
+                Console.WriteLine("***" + contentItems.Count + " readed");
+                return contentItems;
+
             }
+            catch (System.IO.FileNotFoundException e)
+            {
 
-            reader.Close();
-            Console.WriteLine("***" + contentItems.Count + " readed");
+                contentItems.Add(new ContactModel("Please", " add ", "contact ", "list ", "csv ", "file"));
 
-            return contentItems;
+                return contentItems;
+            }
         }
     }
 }

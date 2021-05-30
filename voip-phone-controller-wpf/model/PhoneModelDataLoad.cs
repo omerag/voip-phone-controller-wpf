@@ -17,22 +17,38 @@ namespace voip_phone_controller_wpf.control
         {
             List<PhoneModel> phoneModels = new List<PhoneModel>();
             int phones = 3;
-            StreamReader reader = new StreamReader(path);
 
-            reader.ReadLine(); //skip first row
-
-            while (!reader.EndOfStream && phones > 0)
+            try
             {
-                string line = reader.ReadLine();
-                string[] values = line.Split(',');
+                StreamReader reader = new StreamReader(path);
 
-                phoneModels.Add(new PhoneModel(values[0], values[1]));
-                phones--;
+                reader.ReadLine(); //skip first row
+
+                while (!reader.EndOfStream && phones > 0)
+                {
+                    string line = reader.ReadLine();
+                    string[] values = line.Split(',');
+
+                    phoneModels.Add(new PhoneModel(values[0], values[1]));
+                    phones--;
+                }
+
+
+                reader.Close();
+
+                return phoneModels;
+
+            }
+            catch (System.IO.FileNotFoundException e)
+            {
+                phoneModels.Add(new PhoneModel("0.0.0.0", "000"));
+                phoneModels.Add(new PhoneModel("0.0.0.0", "000"));
+                phoneModels.Add(new PhoneModel("0.0.0.0", "000"));
+
+
+                return phoneModels;
             }
 
-
-            reader.Close();
-            return phoneModels;
         }
 
     }
