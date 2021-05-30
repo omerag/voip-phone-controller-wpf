@@ -8,7 +8,7 @@
 <image src="https://github.com/omerag/voip-phone-controller-wpf/blob/master/Images/Preview.jpg?raw=true"/>
 
 
-# How ot install:
+# How to install:
 <p> Download the release zip file and extract it in anywere on your hard drive. </p>
 <p> Link: https://github.com/omerag/voip-phone-controller-wpf/raw/master/release.zip </p>
 
