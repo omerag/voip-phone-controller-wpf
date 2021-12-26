@@ -31,7 +31,7 @@ namespace voip_phone_controller_wpf.model
             // if it is not deleted.
             using (StreamWriter sw = File.AppendText(path))
             {
-                sw.WriteLine("ip " + ip +", line: " + lineExtension + " called " + number + " " + status );
+                sw.WriteLine("date " + DateTime.Now.Date + ", ip " + ip +", line: " + lineExtension + " called " + number + " " + status );
             }
         }
     }
